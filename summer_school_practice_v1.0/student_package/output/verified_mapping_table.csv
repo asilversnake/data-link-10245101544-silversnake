@@ -1,0 +1,13 @@
+﻿source_field,unified_field,rule,unit,type,null_strategy,evidence,verified
+target_id (OpenSky) / target_id (TL),track_id,direct_copy,6-char hex,string,never_null,Field definition: 6位十六进制字符串，保留前导0,true
+callsign (OpenSky) / callsign (TL),identity.callsign,copy_if_valid,ASCII,string|null,null_if_empty_or_invalid,TL validity_flags bit6=0 → null; OpenSky empty string → null,true
+lat (OpenSky) / latitude_code (TL),position.lat,decode_if_valid,degrees,float|null,null_if_invalid_bit,TL: code/(2^22-1)*180-90; validity_flags bit0=0 → null,true
+lon (OpenSky) / longitude_code (TL),position.lon,decode_if_valid,degrees,float|null,null_if_invalid_bit,TL: code/(2^22-1)*360-180; validity_flags bit1=0 → null,true
+altitude (OpenSky) / altitude_code (TL),position.alt,decode_if_valid,meters,float|null,null_if_invalid_bit,TL: code-1000; validity_flags bit2=0 → null,true
+speed (OpenSky) / speed_code (TL),motion.speed,decode_if_valid,m/s,float|null,null_if_invalid_bit,TL: code*0.1; validity_flags bit3=0 → null,true
+heading (OpenSky) / heading_code (TL),motion.heading,decode_if_valid,degrees,float|null,null_if_invalid_bit,"TL: code*0.01, range [0,360); validity_flags bit4=0 → null",true
+vertical_rate (OpenSky) / vertical_rate_code (TL),motion.vertical_rate,decode_if_valid,m/s,float|null,null_if_invalid_bit,TL: code*0.01-327.68; validity_flags bit5=0 → null,true
+on_ground (OpenSky) / status_flags bit0 (TL),status.on_ground,decode_bit0,bool,bool,default_false,status_flags bit0; OpenSky: direct bool,true
+timestamp_source (OpenSky) / status_flags bit2 (TL),quality.time_source,map_flag,enum,string,default_position_time,"TL: bit2 set → last_contact, else position_time",true
+alt_type/baro vs geo (OpenSky) / status_flags bit1 (TL),position.alt_type,map_flag,enum,string,default_unknown,TL: bit1 set → geo; OpenSky: from altitude source; invalid → unknown,true
+message_valid (OpenSky) / frame checks (TL),quality.message_valid,direct_copy,bool,bool,default_false,OpenSky: from decode; TL: from validity check result,true

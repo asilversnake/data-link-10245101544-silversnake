@@ -1,0 +1,14 @@
+source_field,target_path,type,scale,offset,unit,validity_bit,notes
+target_id,track_id,string,,,,直接映射
+callsign,identity.callsign,string,,,,去除空格后映射
+latest_time,timestamp,int,,,,Unix秒
+lat,position.lat,float,,,,度
+lon,position.lon,float,,,,度
+altitude,position.alt,float,,,,米
+alt_type,position.alt_type,string,,,,baro或geo
+speed,motion.speed,float,,,,米/秒
+heading,motion.heading,float,,,,度
+vertical_rate,motion.vertical_rate,float,,,,米/秒
+on_ground,status.on_ground,boolean,,,,
+timestamp_source,quality.time_source,string,,,,
+message_valid,quality.message_valid,boolean,,,,

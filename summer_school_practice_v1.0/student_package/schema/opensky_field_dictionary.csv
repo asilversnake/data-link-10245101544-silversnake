@@ -1,0 +1,15 @@
+field_name,field_index,description,unit,type,nullable,min_val,max_val,notes
+icao24,0,航空器目标标识,6位十六进制字符串,string,no,,,必需，恰好6位十六进制
+callsign,1,呼号,8字符ASCII,string,yes,,,去除首尾空格后1-8字符
+origin_country,2,来源国家,字符串,string,no,,,参考字段
+time_position,3,位置更新时间,Unix秒,integer,yes,,,优先用作timestamp
+last_contact,4,最近联系时间,Unix秒,integer,no,,,time_position空时回退
+longitude,5,经度,度,float,yes,-180,180,可空
+latitude,6,纬度,度,float,yes,-90,90,可空
+baro_altitude,7,气压高度,米,float,yes,,可空，优先高度源
+on_ground,8,是否在地面,布尔值,boolean,no,,,必需
+velocity,9,地速,米/秒,float,yes,0,,可空
+true_track,10,航向,度,float,yes,0,360,0<=heading<360
+vertical_rate,11,垂直速度,米/秒,float,yes,,,可空
+geo_altitude,13,几何高度,米,float,yes,,,baro空时回退
+position_source,16,位置来源,整数编码,integer,no,,,参考字段

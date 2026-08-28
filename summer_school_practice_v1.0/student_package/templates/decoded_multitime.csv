@@ -1,0 +1,1 @@
+frame_no,target_id,message_seq,timestamp,lat,lon,altitude,speed,heading,vertical_rate,on_ground,altitude_is_geometric,timestamp_fallback,callsign,latitude_code,longitude_code,altitude_code,speed_code,heading_code,vertical_rate_code,status_flags,validity_flags,message_valid

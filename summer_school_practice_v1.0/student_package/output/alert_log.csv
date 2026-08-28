@@ -1,0 +1,5 @@
+﻿alert_time,target_id,alert_type,severity,field,description
+1710000120,780def,POSITION_MISSING,HIGH,lat,Position field(s) lat missing for 780def
+1710000120,000001,DATA_DELAYED,MEDIUM,timestamp,"Record 000001 delayed by 120s (batch=1710000120, record=1710000000)"
+1710000120,780aaa,DUPLICATE_RECORD,MEDIUM,"target_id,timestamp",Duplicate record for 780aaa at timestamp 1710000100
+1710000120,780bbb,HEADING_OUT_OF_RANGE,MEDIUM,heading,"Heading 360.0 out of range [0, 360) for 780bbb"

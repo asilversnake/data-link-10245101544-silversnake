@@ -1,0 +1,12 @@
+field_name,description,type,bytes,encoding,notes
+target_id,6位icao24标识,hex_string,3,uint24,必需，保留前导0
+timestamp,Unix秒时间戳,unix_timestamp,4,uint32,必需
+callsign,ASCII呼号,ascii_string,8,ASCII填充0,可空
+latitude_code,22位纬度码,fixed_point,3,uint22,最高2位保留为0
+longitude_code,22位经度码,fixed_point,3,uint22,最高2位保留为0
+altitude_code,高度码+偏置1000,uint16,2,uint16,1米分辨率
+speed_code,速度码,uint16,2,uint16,0.1米/秒分辨率
+heading_code,航向码,uint16,2,uint16,0.01度分辨率
+vertical_rate_code,垂直速度码+偏置,uint16,2,uint16,0.01米/秒
+status_flags,状态标志位,bitfield,1,uint8,bit3-7保留为0
+validity_flags,有效性标志位,bitfield,1,uint8,bit7保留为0

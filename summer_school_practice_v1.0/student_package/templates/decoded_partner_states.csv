@@ -1,0 +1,1 @@
+target_id,callsign,origin_country,timestamp,timestamp_source,lat,lon,altitude,alt_type,speed,heading,vertical_rate,on_ground,latitude_code,longitude_code,altitude_code,speed_code,heading_code,vertical_rate_code,status_flags,validity_flags,message_valid

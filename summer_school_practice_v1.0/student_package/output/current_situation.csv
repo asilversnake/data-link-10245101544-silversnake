@@ -1,0 +1,4 @@
+﻿target_id,callsign,latest_time,latitude,longitude,altitude,speed,heading,vertical_rate,on_ground,track_length,altitude_is_geometric,timestamp_fallback,status_flags,validity_flags,message_valid
+000001,TEST0001,1710000210,0.01100778842157979,0.0003004074812906765,10,2.0,0.5,0.0,True,3,False,False,1,127,True
+780abc,CES1234,1710000180,31.245146094595455,121.49049317610104,9810,232.5,86.5,0.0,False,3,False,False,0,127,True
+780def,,1710000240,30.289335319837406,120.1713610103991,7610,,270.5,-1.1999999999999886,False,3,True,True,6,55,True
